@@ -1,0 +1,46 @@
+.react-calendar{
+    max-width: 600px;
+    width:100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.react-calendar__navigation{
+    text-align: center;
+    padding: 20px 0 20px;
+}
+
+.react-calendar__navigation__label__labelText{
+font-size: 30px;
+font-weight: 900;
+}
+
+.react-calendar__viewContainer{
+    height: 100%;
+    display: flex;
+
+    .react-calendar__month-view > div{
+      
+        // 월화수목금토
+        .react-calendar__month-view__weekdays__weekday{
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 900;
+        }
+        // 1~30일
+        .react-calendar__month-view__days{
+            .react-calendar__tile{
+                // display: flex;
+                // align-items: flex-start;
+                // justify-content: flex-start;
+                height: 74px;
+                padding: 8px 0px 0px 8px;
+                background-color: #fff;
+            }
+
+            
+        }
+
+    }
+}

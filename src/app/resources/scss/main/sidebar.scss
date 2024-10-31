@@ -1,0 +1,224 @@
+@import '../mixin';
+
+*{
+    transition: 0.2s ease-in-out;
+}
+
+nav{
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    border-right: 1px solid #eee;
+    padding: 20px 14px 10px 14px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    background-color: #fff;
+
+    h1{
+        transition: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        padding-bottom: 16px;
+        font-size: 20px;
+        border-bottom: 1px solid #ddd;
+
+        &::before{
+            content:"";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url("../../img/logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 8px;
+        }
+    }
+
+    .right_toggle{
+        position: absolute;
+        right: -15px;
+        top: 40px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        @include txtHide;
+        background-color: $main100;
+        border-radius: 100%;
+
+        svg{
+            position: absolute;
+            top: 1.5px;
+            right:1.5px;
+        }
+    }
+
+    select{
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background: linear-gradient(90deg, rgba(1,56,98,1) 0%, rgba(26,53,233,1) 0%, rgba(2,159,220,1) 49%, rgba(0,199,255,1) 100%);
+        padding: 10px 12px;
+        color: #fff;
+        appearance: none;
+        -webkit-appearance: none; //기본 화살표 안보이게 
+    }
+
+    .nav_wrap{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px 14px 14px 0px;
+.gnb{
+    display: flex;
+    flex-direction: column;
+
+
+    .mli{
+        position: relative;
+    padding: 12px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    height: auto;
+    transition: 0.4s ease;
+    letter-spacing: -0.48px;
+    cursor: pointer;
+ svg{
+    position: relative;
+    top: 3px;
+
+    &:nth-child(2){
+        position: absolute;
+        right: 0;
+        top:20px;
+    }
+ }
+
+ &::before{
+    content:"";
+    display: inline-block;
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background-color: $main100;
+    top: 38px;
+    left: 50px;
+
+    transition: 0.42s ease-out;
+ }
+
+    &:hover{
+        color: $main100;
+        &::before{
+            width: 30%;
+         }
+    }
+
+    &>ul{
+        margin-top: 12px;
+        max-height: 0;
+        display: none;
+
+        &>li{
+            padding: 9px 10px 9px 24px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #212121;
+            transition: 0.4s ease;
+            letter-spacing: -0.4px;
+
+            &:hover{
+                background-color: #eee;
+                border-radius: 10px;
+            }
+        }
+
+
+    }
+
+    &.on{
+        &>ul{
+            max-height: 400px;
+            display: block;
+        }
+    }
+
+    svg{
+        margin: 0px 8px 0px;
+    }
+    }
+}
+.logout{
+    @include flex-center;
+    margin-left: auto;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+    }
+    }
+
+    &.min{
+        width: 56px;
+        padding: 20px 0 0 0;
+
+         .right_toggle{
+
+            transform:rotate(180deg)
+         }
+
+        h1{
+            font-size: 0px;
+            margin: 0 auto;
+
+            &::before{
+                width: 30px;
+                height: 30px;
+                margin-right: 0;
+            }
+        }
+
+        .nav_wrap{
+            .gnb{
+                .mli{
+                    font-size: 0;
+                    transition: none;
+        
+                    &>ul{
+                        display: none;
+                    }
+        
+                    &::before{
+                        display: none;
+                    }
+        
+                    svg{
+                        &:nth-child(2){
+                    display: none;
+                        }
+                    }
+                }
+            }
+            .logout{
+                display: flex;
+                justify-content: center;
+                span{
+                    display: none;
+                }
+                svg{
+                    margin: 0;
+                    position: relative;
+                    right: 3px;
+                }
+            }
+        }
+      
+    }
+
+}
+
